@@ -1,10 +1,11 @@
-from microbit import speech
+from microbit import *
+import speech
 angle2 = 0
 angle1 = 0
 angle = 0
 while True:
     basic.show_leds("""
-        . . . . .
+                . . . . .
                 # # # # #
                 . # . # .
                 . # . # .
@@ -15,4 +16,11 @@ while True:
         angle2 = randint(0, 360)
         pins.servo_write_pin(AnalogPin.P13, angle1)
         pins.servo_write_pin(AnalogPin.P14, angle2)
-        koi.koi_audio_play("say.wav")
+        speech.say("Hello")
+        basic.show_leds("""
+                . . . . .
+                # # # # #
+                # . . . #
+                . # # # .
+                . . . . .
+        """)
